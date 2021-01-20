@@ -1,0 +1,23 @@
+JQUERY
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+BOOTSTRAP
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"rel="stylesheet" id="bootstrap-css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+FILE CSS
+<link rel="stylesheet" href="./[FILE].css">
+
+FILE JS
+<script src="./[FILE].js"></script>
+
+GOOGLE FONT (CSS INSERT)
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel">
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+THREE
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r122/three.min.js" integrity="sha512-bzjaf85dHTL4H0BvkAJ/Jbvxqf1rDj+jVpCNe3oxQj/RXSnkx1HnKhqIcmMWghxEAbXsYgddrc38saWpltlkug==" crossorigin="anonymous"></script>
+
+FONT AWESOME
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+

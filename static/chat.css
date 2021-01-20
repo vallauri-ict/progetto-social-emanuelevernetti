@@ -1,0 +1,111 @@
+  /*chat css part */
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+  
+  *{
+    font-family: "cinzel";
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #wrapper {
+    height: 77%;
+    overflow: auto;
+    margin: 12px;
+    margin-left: 0%;
+    margin-right: 0%;
+    padding: 8px;
+    border-radius: 18px;
+    background-color: rgb(41, 41, 41);
+    background-image: url("https://res.cloudinary.com/dybkxna2t/image/upload/v1611126123/chatBKG_zklnwj.jpg");
+    background-size: cover;
+  }
+
+  /* queste classi sono usate dalla funzione visualizza() */
+  .message-container {
+    margin: 12px 0;
+    padding: 8px;
+    background-color: transparent;
+    color: white;
+    width: 45%;
+    height: auto;
+    word-wrap:break-word;
+    border-radius:  20px 20px 20px 0px;
+    border: 1px solid white;
+  }
+
+  .message-data {
+    font-weight: bold;
+  }
+
+  .message-from {
+    font-style: italic;
+  }
+
+  .right{
+    margin-left: 55%;
+    border-radius: 20px 20px 0px 20px;
+  }
+
+
+
+
+/* not implemented yet */
+.navbar{
+  background-color: transparent;
+  border: 1.5px solid black;
+  border-top: 0px;
+  border-radius: 0 0 15px 15px;
+}
+
+.navbar-brand{
+  color: black;
+  font-size: 25pt;
+}
+
+.navbar-brand:hover{
+  color: rgb(60, 60, 60);
+  cursor: default;
+}
+
+.postRadius{
+  border-radius: 15px;
+}
+
+.postContainer{
+  width:75%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.post{
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 2% auto;
+  height: 45%;
+  width: 50%;
+  
+  display: grid;
+  grid-gap: 2%;
+  padding: 1%;
+}
+
+.profLink{
+  border: 1px solid black;
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.caption{
+  border: 1px solid black;
+  grid-row-start: 1;
+  grid-row-end: 7;
+}
+
+.media{
+  border: 1px solid black;
+  grid-row-start: 1;
+  grid-row-end: 7;
+}

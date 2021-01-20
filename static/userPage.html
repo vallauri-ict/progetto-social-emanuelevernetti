@@ -1,0 +1,160 @@
+<html>
+
+<head>
+    <title>Hawxy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+        <script src="./userPage.js"></script>
+        <script src="./libreria.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-expand-xl navbar-expand-sm navbar-expand-md navbar-light bg-light" style="margin:0;">
+            <!-- Brand -->
+            <a class="navbar-brand" href="index.html" style="font-size: 2.2em;">Hawxy</a>
+
+            <!-- Toggler/collapsible Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="navbar-collapse collapse" id="collapsibleNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="chatMenu.html" id="chatBTN">Followed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="serch.html" id="userSerch">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="userPage.html" id="myAccountBTN">Link 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="newpost.html" id="newPost">New Post</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                <form class="form-inline my-2 my-lg-0" style="float: right;">
+                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" id="logOut">Log Out</button>
+                  </form>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row" id="loadingAccount">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align: center;">
+                <br><br><br><br><br><br>
+                <h2 class="d-inline">The account is loading </h2>
+                <div class="spinner-grow text-dark d-inline-block" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+
+    <br><br>
+    <div class="row" id="row1">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div style="margin: 0 auto; text-align: center;">
+                <h1 id="usernameTitle">Username</h1>
+                <img id="profileIMG" src="https://res.cloudinary.com/dybkxna2t/image/upload/v1611126122/noIMG_fllplh.png" width="75%" style="border-radius: 15% 0 15% 0;">
+            </div>
+        </div>
+    <div class="col-sm-4"></div>
+    </div>
+    <br><br>
+
+    <div class="row" id="row5">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="card rounded shadow-sm border-0" >
+                <button type="button" class="btn btn-outline-dark" id="setting">Settings</button>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+    <br><br>
+    <div class="row" id="row4">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+                <div class="card rounded shadow-sm border-0" >
+                    <button type="button" class="btn btn-outline-dark" id="follow">Follow</button>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card rounded shadow-sm border-0">
+                    <button type="button" class="btn btn-outline-dark" id="message">Message</button>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+    <div class="row" id="row2">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <div class="card rounded shadow-sm border-0" >
+                    <h5 style=" margin-top: 1%;" class="d-inline"> <a class="text-dark" style="margin-left: 5%;">Post number: </a>  <a class="text-dark" id="postN" style="margin-left: 5%;">0</a></h5> 
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card rounded shadow-sm border-0">
+                    <h5 style=" margin-top: 1%;" class="d-inline"> <a class="text-dark" style="margin-left: 5%;">Follow: </a> <a class="text-dark" id="followN" style="margin-left: 5%;">0</a></h5> 
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <br>
+
+    <div class="row" id="row3">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="card rounded shadow-sm border-0">
+                    <h5 style=" margin-top: 1%;"> <a class="text-dark" id="nominative" style="margin-left: 5%;">Name Surname</a></h5> 
+                    <div class="clarFix">
+                        <p class="small text-muted font-italic d-inline" style="margin-left: 5%; margin-top: 1%;">Nationality: </p> <p class="small text-dark font-italic d-inline font-weight-bold" id="natCode">IT</p>  <img id="natIMG" width="5%" class="d-inline" src="https://www.countryflags.io/it/flat/64.png"> <br>
+                        <p class="small text-muted font-italic d-inline" style="margin-left: 5%; margin-top: 1%;">Account created: </p> 
+                        <p class="small text-dark font-italic d-inline font-weight-bold" id="accountCreationData">1/1/2021</p> <br>
+                        <p class="small text-muted font-italic d-inline" style="margin-left: 5%; margin-top: 1%;">Email: </p> 
+                        <p class="small text-dark font-italic d-inline font-weight-bold" id="email">user@gmail.com</p>
+                        <p class="small text-muted font-italic" style="margin-left: 5%; margin-top: 1%;" id="BiographyLBL">Biography: </p> 
+                        <p class="small text-dark font-italic font-weight-bold" id="bioTxt" style="margin-left: 5%;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+<br>
+        <div class="row" id="rowPost">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" id="postWrapper">
+                <div id="noPost" style="margin: 0 auto;">
+                    <br><br><br>
+                    <h1 style="text-align:center;">No post yet!</h1>
+                    <br><br><br>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    
+    </div>
+
+</body>
+
+</html>

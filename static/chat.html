@@ -1,0 +1,46 @@
+<html>
+
+<head>
+	<title id="title">Hawxy chat with: </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script type="application/javascript"
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.1/socket.io.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" integrity="sha512-F5QTlBqZlvuBEs9LQPqc1iZv2UMxcVXezbHzomzS6Df4MZMClge/8+gXrKw2fl5ysdk4rWjR0vKS7NNkfymaBQ==" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="chat.css">
+
+	<script type="application/javascript" src="chat.js"></script>
+	<script type="application/javascript" src="libreria.js"></script>
+	<script type="application/javascript" src="speechToText.js"></script>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<button class="	btn btn-dark" id="btnDisconnetti" style="height: 50px; width: 50px; margin-top: 10px; margin-left: 10px;"><i class="far fa-caret-square-left"></i></button>
+		<button class="	btn btn-dark" id="btnLogOut" style="height: 50px; width: 100px; margin-top: 10px; margin-right: 10px; float: right;"><i>LogOut</i></button>
+		<div id="wrapper">
+			<!-- Qui verranno visualizzati i messaggi provenienti dagli utenti -->
+		</div>
+
+		<div class="row">
+			<div class="col-xs-1 col-sm-2 col-lg-2 col-md-2"></div>
+			<div class="col-xs-2  col-sm-1 col-lg-1 col-md-1">
+				<button class="	btn btn-danger" id="btnSpeech" style="height: 4.1%;"><i class="fas fa-microphone"></i></button>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+				<input type="email" class="form-control" id="txtMessage" placeholder="Inserisci qui il tuo messaggio">
+			</div>
+			<div class="col-xs-1 col-sm-2 col-lg-2 col-md-2">
+				<button class="	btn btn-primary" id="btnInvia" style="margin-left: 55%;">Invia</button>
+			</div>
+			<div class="col-xs-2 col-sm-1 col-lg-1 col-md-1"></div>
+		</div>
+	</div>
+
+</body>
+
+</html>

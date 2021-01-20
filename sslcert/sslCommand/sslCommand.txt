@@ -1,0 +1,9 @@
+Ssl script-->
+openssl req -newkey rsa:2048 -new -nodes -x509 -days 365 -keyout key.pem -out cert.pem
+
+To allow this certificate use
+chrome://flags/#allow-insecure-localhost
+
+Enable Allow invalid certificates for resources loaded from localhost.
+
+Click on the button relaunch (the car will work)
