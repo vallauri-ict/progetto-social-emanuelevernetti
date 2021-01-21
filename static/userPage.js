@@ -88,7 +88,7 @@ $(()=> {
                 let div2=$("<div class='card-body p-4'>").appendTo(div1)
                 $("<img  alt='Immagine' class='img-fluid d-block mx-auto mb-3'>").prop("src",data[i]["img"]).appendTo(div2)
                 let H5=$("<h5>").appendTo(div2)
-                $("<a class='text-dark'></a>").html(data[i]["username"]).prop("value",data[i]["username"]).addClass("linkToProfile").appendTo(H5)
+                $("<a class='text-dark'></a>").html(_username).prop("value",_username).addClass("linkToProfile").appendTo(H5)
                 $("<p class='small text-muted font-italic'></p>").html(data[i]["postCaption"]).appendTo(div2)
                 $("<br>").appendTo(postWR)
             }

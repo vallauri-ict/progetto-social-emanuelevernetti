@@ -2,6 +2,7 @@
 
 $(()=> {
     $("#row1").hide()
+    $("#noPost").hide()
     $("#loadingAccount").show()
 
     let postWR=$("#wrapperPost")
@@ -31,6 +32,8 @@ $(()=> {
             $("<p class='small text-muted font-italic'></p>").html(data["arrPost"][i]["postCaption"]).appendTo(div2)
             $("<br>").appendTo(postWR)
         }
+            if(data["arrPost"].length==0)
+            $("#noPost").show()
 
             $("#row1").show()
             $("#loadingAccount").hide()

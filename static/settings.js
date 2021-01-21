@@ -1,6 +1,7 @@
 "use strict"
 
 $(()=> {
+    $("#loadingSetting").hide()
     $("#errorLBL").css("color","red").hide()
     $("#modP").hide()
     $("#highP").hide()
@@ -53,7 +54,9 @@ $(()=> {
     })
 
     $("#pushMod").on("click",()=>{
-
+        $("#modP").hide()
+        $("#highP").hide()
+        $("#loadingSetting").show()
         let ISimage=false
         let files = $("#uploadThumb").prop("files");
         console.log(files);
@@ -97,8 +100,12 @@ $(()=> {
                     rsqMultipart.fail(errore)
                     rsqMultipart.done((data)=>{
                         console.log(data)
+
+                        window.location.href="userPage.html"
                     })
                 }
+                else
+                    window.location.href="userPage.html"
             }
         })
         //})

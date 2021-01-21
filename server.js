@@ -1,6 +1,6 @@
 "use strict"
 
-const PORT = process.env.PORT || 1337;
+const PORT = 1337
 
 const https = require("https")
 const express = require("express")
@@ -653,6 +653,7 @@ app.post("/api/accountMod",(req, res, next) => {
 
             let toModJSON={}
 
+            currnetObj=req.body["userId"]
             if(req.body["email"]!="" && req.body["email"]!=null && req.body["email"]!=undefined){
                 toModJSON["email"]=req.body["email"]
             }
@@ -853,6 +854,8 @@ app.post("/api/moveIMG",(req, res, next) => {
                 const collection = db.collection("users")
 
                 let usersARR=[]
+                let isnopost=true
+                let originalFollowed
 
                 collection.findOne({"username":req.body["user"]},(err, data)=>{
                     if(err)
@@ -862,27 +865,44 @@ app.post("/api/moveIMG",(req, res, next) => {
                             for(let y=0;y<data["posts"].length; y++){
                                 usersARR.push({"user":data["username"],"date":data["posts"][y]["date"]})
                                 postArray.push(data["posts"][y])
+                                isnopost=false
                             }
                         }
-                        for (let i = 0; i < data["followed"].length; i++) {
-                            collection.findOne({"username":data["followed"][i]},(err, data)=>{
-                                if(err)
-                                    res.status(500).send("Internal Error in Query Execution")
-                                else{       
-                                    if(data!=null){
-                                        for(let y=0;y<data["posts"].length; y++){
-                                            usersARR.push({"user":data["username"],"date":data["posts"][y]["date"]})
-                                            postArray.push(data["posts"][y])
+                        if(data["followed"].length!=0){
+                            originalFollowed=data["followed"]
+                            for (let i = 0; i < data["followed"].length; i++) {
+                                collection.findOne({"username":data["followed"][i]},(err, data)=>{
+                                    if(err)
+                                        res.status(500).send("Internal Error in Query Execution")
+                                    else{       
+                                        if(data!=null){
+                                            for(let y=0;y<data["posts"].length; y++){
+                                                usersARR.push({"user":data["username"],"date":data["posts"][y]["date"]})
+                                                postArray.push(data["posts"][y])
+                                            }
+                                        }
+                                        console.log(parseInt(originalFollowed.length))
+                                        if(originalFollowed.length-1==i){
+                                            postArray.sort(sortByProperty("date"))
+                                            usersARR.sort(sortByProperty("date"))
+                                            res.send({"arrPost":postArray,"username":usersARR})
+                                            client.close()
                                         }
                                     }
-                                    if(data["followed"].length-1==i){
-                                        postArray.sort(sortByProperty("date"))
-                                        usersARR.sort(sortByProperty("date"))
-                                        res.send({"arrPost":postArray,"username":usersARR})
-                                        client.close()
-                                    }
-                                }
-                            })
+                                })
+                            }
+                        }
+                        else{
+                            if(!isnopost){
+                                postArray.sort(sortByProperty("date"))
+                                usersARR.sort(sortByProperty("date"))
+                                res.send({"arrPost":postArray,"username":usersARR})
+                                client.close()
+                            }
+                            else{
+                                res.send(JSON.stringify({"arrPost":[]}))
+                                client.close()
+                            }
                         }
                     }
 

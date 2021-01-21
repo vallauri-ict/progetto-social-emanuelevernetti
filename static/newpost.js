@@ -2,6 +2,7 @@
 
 $(()=> {
     $("#errorLBL").hide()
+    $("#postCommit").hide()
 
     let _username
     let dercyptTKN
@@ -29,6 +30,10 @@ $(()=> {
     })
 
     $("#pushPost").on("click",()=>{
+        $("#highP").hide()
+        $("#modP").hide()
+        $("#postCommit").show()
+
         let ISimage=false
         let files = $("#uploadThumb").prop("files");
         console.log(files);
